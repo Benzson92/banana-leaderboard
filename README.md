@@ -1,6 +1,10 @@
-# Welcome to your Expo app 👋
+# Welcome to your Leaderboard app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+## Overview
+
+This Leaderboard project is a mobile application built using React Native and Expo that displays a ranked list of users based on the number of bananas they have. Users can search for a specific username to see their ranking and compare it with others. The application is designed with a user-friendly interface, offering various sorting and searching options to enhance user experience.
 
 ## Get started
 
