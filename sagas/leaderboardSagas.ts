@@ -1,7 +1,7 @@
 import { call, put, delay } from 'redux-saga/effects';
 import isEmpty from 'lodash/isEmpty';
 
-import fetchLeaderboardData from '../api/fetchLeaderboardData.api';
+import fetchLeaderboardData from '../apis/fetchLeaderboardData.api';
 
 import {
   fetchLeaderboardSuccess,
