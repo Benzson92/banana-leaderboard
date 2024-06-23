@@ -20,9 +20,9 @@ import leaderboardData from '../assets/data/leaderboard.json';
 import { customSortByName } from '../utils/customSortByName.util';
 import { SortBy, OrderBy } from '../types/sortTypes';
 
-const testTimeout = 5000; // Increase the timeout to 5000ms
+const testTimeout = 5000;
 
-jest.setTimeout(10000); // Set a global timeout for Jest
+jest.setTimeout(10000);
 
 describe('fetchLeaderboardSaga', () => {
   afterEach(() => {
@@ -38,11 +38,6 @@ describe('fetchLeaderboardSaga', () => {
       const action: FetchLeaderboardRequestAction = {
         type: FETCH_LEADERBOARD_REQUEST,
         payload: {},
-        // payload: {
-        //   username: '',
-        //   sortBy: 'highestRank' as SortBy,
-        //   orderBy: 'asc' as OrderBy,
-        // },
       };
 
       const sortedData = Object.values(leaderboardData)

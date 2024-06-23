@@ -2,9 +2,6 @@ import {
   FETCH_LEADERBOARD_REQUEST,
   FETCH_LEADERBOARD_SUCCESS,
   FETCH_LEADERBOARD_FAILURE,
-  // FetchLeaderboardRequestAction,
-  // FetchLeaderboardSuccessAction,
-  // FetchLeaderboardFailureAction,
 } from '../actionTypes/leaderboardActionTypes';
 
 import { LeaderboardRequestPayloadDTO } from '../models/leaderboard/LeaderboardActionDTO';

@@ -34,8 +34,6 @@ const leaderboardReducer = (
     case FETCH_LEADERBOARD_REQUEST: {
       const { sortBy, orderBy } = action.payload;
 
-      console.log('FETCH_LEADERBOARD_REQUEST', state);
-
       return {
         ...state,
         leaderboard: [],
@@ -55,8 +53,6 @@ const leaderboardReducer = (
       };
 
     case FETCH_LEADERBOARD_FAILURE:
-      console.log('FETCH_LEADERBOARD_FAILURE', action.payload);
-
       return {
         ...state,
         leaderboard: [],

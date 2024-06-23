@@ -13,8 +13,6 @@ import {
 } from 'react-native';
 import { StyledComponent } from 'nativewind';
 
-// import { RootState } from '../reducers/rootReducer';
-
 import { getUserStateSelector } from '../selectors/userSelectors';
 import { getLeaderboardSelector } from '../selectors/leaderboardSelectors';
 
@@ -37,10 +35,6 @@ const sortOptions: SortOption[] = [
   { sortBy: 'lowestRank', orderBy: 'asc', text: 'Show Lowest Ranked' },
 ];
 
-// const StyledFlatList = styled(FlatList, {
-//   classProps: ['contentContainerStyle'],
-// });
-
 const Leaderboard: React.FC = () => {
   const dispatch = useDispatch();
 
@@ -54,33 +48,11 @@ const Leaderboard: React.FC = () => {
     [status]
   );
 
-  // const searchedUser = useSelector(
-  //   (state: RootState) => state.user.searchedUser
-  // );
-  // const error = useSelector((state: RootState) => state.user.error);
-
-  // const [searchTerm, setSearchTerm] = useState('');
-
-  console.log('Leaderboard error', error);
-  console.log('Leaderboard leaderboard', leaderboard);
-  console.log('Leaderboard status', status);
-  console.log('Leaderboard dataStatusFlags LOADING', dataStatusFlags.LOADING);
-
-  // useEffect(() => {
-  //   console.log('searchedUserName', searchedUserName);
-
-  //   dispatch(
-  //     fetchLeaderboard({ username: searchedUserName, sortBy: undefined })
-  //   );
-  // }, [dispatch, searchedUserName]);
-
   useEffect(() => {
     dispatch(fetchLeaderboard({}));
   }, [dispatch]);
 
   useEffect(() => {
-    console.log('useEffect error', error);
-
     if (dataStatusFlags.FAILED && error) {
       Alert.alert('Error', error);
     }
@@ -91,8 +63,6 @@ const Leaderboard: React.FC = () => {
   };
 
   const handleSearch = () => {
-    console.log('searchedUserName', searchedUserName);
-
     dispatch(
       fetchLeaderboard({ username: searchedUserName, sortBy: undefined })
     );
@@ -101,14 +71,6 @@ const Leaderboard: React.FC = () => {
   const handleSort = (sortByValue: SortBy, orderByValue: OrderBy) => {
     dispatch(fetchLeaderboard({ sortBy: sortByValue, orderBy: orderByValue }));
   };
-
-  // const handleSortByName = (orderBy: OrderBy) => {
-  //   dispatch(fetchLeaderboard({ sortBy: 'name', orderBy }));
-  // };
-
-  // const handleSortByLowestRank = () => {
-  //   dispatch(fetchLeaderboard({ sortBy: 'lowestRank' }));
-  // };
 
   const renderSortButtonItem: ListRenderItem<SortOption> = ({ item }) => (
     <SortButton
@@ -143,14 +105,6 @@ const Leaderboard: React.FC = () => {
   return (
     <View className="flex-1 bg-white py-6">
       <View className="flex-row justify-between px-4 mb-6">
-        {/* <TextInput
-          className="border border-gray-300 p-2 rounded-md flex-[2] mr-2"
-          value={searchedUserName}
-          onChangeText={handleChangeText}
-          onSubmitEditing={handleSearch}
-          placeholder="Search user"
-          returnKeyType="search"
-        /> */}
         <View className="flex-row items-center border border-gray-300 p-2 rounded-md flex-[2] mr-2">
           <SearchIcon className="mr-2" />
           <TextInput
@@ -179,33 +133,7 @@ const Leaderboard: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         className="flex-grow-0 mb-6"
         contentContainerStyle={styles.contentContainer}
-        // contentContainerStyle="pl-4"
       />
-      {/* <StyledScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        className="flex-grow-0 mb-6"
-      >
-        <Pressable
-          onPress={() => handleSortByName('asc')}
-          className="border border-primary p-2 rounded-md h-9 justify-center  mr-4"
-        >
-          <Text className="text-primary text-center">Sort by Name: A - Z</Text>
-        </Pressable>
-        <Pressable
-          onPress={() => handleSortByName('desc')}
-          className=" text-primary border-primary p-2 rounded-md h-9 justify-center  mr-4"
-        >
-          <Text className="text-primary">Sort by Name: Z - A</Text>
-        </Pressable>
-        <Pressable
-          onPress={handleSortByLowestRank}
-          className=" text-primary border-primary p-2 rounded-md h-9 justify-center  mr-4"
-        >
-          <Text className="text-primary">Show Lowest Ranked</Text>
-        </Pressable>
-      </StyledScrollView> */}
-      {/* {error && <Text className="text-red-500 mt-2">{error}</Text>} */}
       <View className="w-full px-4">
         <View className="flex-row justify-between items-center bg-gray-200 p-2 rounded-md">
           <Text className="flex-[2] font-bold">Name</Text>
