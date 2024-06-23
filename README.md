@@ -31,15 +31,17 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Testing
 
-When you're ready, run:
+The app uses Jest as its testing framework. To run the tests, you can run `yarn test` in your terminal. You can also run `yarn test --watchAll` to run the tests in watch mode.
 
-```bash
-npm run reset-project
-```
+## Linting
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The app uses ESLint as its linter. To lint the codebase, you can run `yarn lint` in your terminal. You can also run `yarn lint-fix` to automatically fix any linting errors.
+
+## Pre-Commit Hooks
+
+The app uses Husky and lint-staged to run pre-commit hooks. This ensures that code is properly formatted and linted before it is committed to the repository.
 
 ## Learn more
 
