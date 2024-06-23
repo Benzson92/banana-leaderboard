@@ -8,13 +8,15 @@ This Leaderboard project is a mobile application built using React Native and Ex
 
 ## Get started
 
-1. Install dependencies
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install dependencies
 
    ```bash
    yarn
    ```
 
-2. Start the app
+4. Start the app
 
    ```bash
     yarn start
