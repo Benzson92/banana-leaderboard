@@ -6,6 +6,16 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 This Leaderboard project is a mobile application built using React Native and Expo that displays a ranked list of users based on the number of bananas they have. Users can search for a specific username to see their ranking and compare it with others. The application is designed with a user-friendly interface, offering various sorting and searching options to enhance user experience.
 
+## Features
+
+- **Top 10 List:** Renders a list of the top 10 users with the most bananas.
+- **User Highlighting:** Highlights the searched user in the list if they are within the top 10.
+- **Error Handling:** Displays an error message if the searched user does not exist.
+- **Dynamic Ranking:** If the searched user is not in the top 10 but has enough bananas to appear, they are included, replacing the last rank in the top 10 list.
+- **Sorting Options:** Allows sorting the list by name or rank.
+- **Lowest Ranked Users:** Provides an option to view the lowest-ranked users, with ties broken alphabetically.
+- **Fuzzy Search:** Implements a fuzzy search feature, allowing users to search by partial names and showing matching usernames sorted by highest to lowest rank.
+
 ## Get started
 
 1. Clone the repository to your local machine.
