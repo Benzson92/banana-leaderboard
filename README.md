@@ -1,16 +1,32 @@
-# Welcome to your Expo app 👋
+# Welcome to your Leaderboard app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Overview
+
+This Leaderboard project is a mobile application built using React Native and Expo that displays a ranked list of users based on the number of bananas they have. Users can search for a specific username to see their ranking and compare it with others. The application is designed with a user-friendly interface, offering various sorting and searching options to enhance user experience.
+
+## Features
+
+- **Top 10 List:** Renders a list of the top 10 users with the most bananas.
+- **User Highlighting:** Highlights the searched user in the list if they are within the top 10.
+- **Error Handling:** Displays an error message if the searched user does not exist.
+- **Dynamic Ranking:** If the searched user is not in the top 10 but has enough bananas to appear, they are included, replacing the last rank in the top 10 list.
+- **Sorting Options:** Allows sorting the list by name or rank.
+- **Lowest Ranked Users:** Provides an option to view the lowest-ranked users, with ties broken alphabetically.
+- **Fuzzy Search:** Implements a fuzzy search feature, allowing users to search by partial names and showing matching usernames sorted by highest to lowest rank.
+
 ## Get started
 
-1. Install dependencies
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Install dependencies
 
    ```bash
    yarn
    ```
 
-2. Start the app
+4. Start the app
 
    ```bash
     yarn start
@@ -25,15 +41,17 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Testing
 
-When you're ready, run:
+The app uses Jest as its testing framework. To run the tests, you can run `yarn test` in your terminal. You can also run `yarn test --watchAll` to run the tests in watch mode.
 
-```bash
-npm run reset-project
-```
+## Linting
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The app uses ESLint as its linter. To lint the codebase, you can run `yarn lint` in your terminal. You can also run `yarn lint-fix` to automatically fix any linting errors.
+
+## Pre-Commit Hooks
+
+The app uses Husky and lint-staged to run pre-commit hooks. This ensures that code is properly formatted and linted before it is committed to the repository.
 
 ## Learn more
 
