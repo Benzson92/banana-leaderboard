@@ -1,27 +1,26 @@
 import React from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, PressableProps, Text } from 'react-native';
 
 import { SortBy, OrderBy } from '../types/sortTypes';
 import { getSortButtonColor } from '../utils/getSortButtonColor.util';
 
-interface SortButtonProps {
+interface SortButtonProps extends PressableProps {
   sortBy: SortBy;
   orderBy: OrderBy;
   text: string;
   currentSortBy: SortBy;
   currentOrderBy: OrderBy;
-  handleSort: (sortBy: SortBy, orderBy: OrderBy) => void;
-  style?: string;
+  buttonClassName?: string;
 }
 
 const SortButton: React.FC<SortButtonProps> = ({
+  onPress,
   sortBy,
   orderBy,
   text,
   currentSortBy,
   currentOrderBy,
-  handleSort,
-  style,
+  buttonClassName,
 }) => {
   const { borderColor, textColor } = getSortButtonColor({
     sortBy,
@@ -32,8 +31,8 @@ const SortButton: React.FC<SortButtonProps> = ({
 
   return (
     <Pressable
-      onPress={() => handleSort(sortBy, orderBy)}
-      className={`border ${borderColor} p-2 rounded-md h-9 justify-center ${style}`}
+      onPress={onPress}
+      className={`border ${borderColor} p-2 rounded-md h-9 justify-center ${buttonClassName}`}
     >
       <Text className={`${textColor} text-center`}>{text}</Text>
     </Pressable>
